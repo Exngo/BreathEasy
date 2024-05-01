@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/styles.css">
+    <title>Preview page</title>
+</head>
+<body>
+    <div class="content">
+    <nav id="navbarID" class="navbar">
+        <ul class="nav-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="preview.html">Preview</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>
+    </nav>
+    <div class="tooltip" data-tooltip="That is navigation"></div>
+    <div class="header-block">
+        <div class="logo-section">
+            <a href="index.html"><img src="../logoo.png" alt="Logo" class="logo"></a>
+            <div class="vertical-text">
+                <span>H</span>
+                <span>o</span>
+                <span>m</span>
+                <span>e</span>
+            </div>
+        </div>
+        <div class="tooltip" style="margin-left: 5%;" data-tooltip="That`s a Home button."></div>
+        <div id="headerID" class="header-name">
+            BreathEasy Preview
+        </div>
+        <div class="tooltip" style="margin-right: 5%;" data-tooltip="Preferences are here:"></div>
+        <div class="tooltip-section">
+            <button class="tooltip-button"><img class="settingsImg" src="../settings.png"></button>
+            <div class="tooltip-content">
+                <div class="toggle">
+                    <label class="switch">
+                        <input type="checkbox" id="toggleTooltips">
+                        <span class="slider round"></span>
+                    </label>
+                    <span class="label-text">Show tips</span>
+                </div>
+                <div class="toggle">
+                    <label class="switch">
+                        <input type="checkbox" id="toggleFontSize">
+                        <span class="slider round"></span>
+                    </label>
+                    <span class="label-text">Larger font</span>
+                </div>
+                <div class="toggle">
+                    <label class="switch">
+                        <input type="checkbox" id="toggleContrast">
+                        <span class="slider round"></span>
+                    </label>
+                    <span class="label-text">High Contrast</span>
+                </div>
+            </div>
+    </div>
+    </div>
+    <div class="color-legend">
+        <div class="color-box" style="background-color: #00ff00;"></div><span>Breathe In</span>
+        <div class="color-box" style="background-color: #FF6347;"></div><span>Breathe Out</span>
+        <div class="tooltip" style="margin-left: 5%;" data-tooltip="Color legend"></div>
+    </div>
+    <main>
+        <div id="app">
+            <div class="tooltip" style="margin-right: 5%;" data-tooltip="Exercise parameters:"></div>
+            <div id="controls" class="controls">
+                <div>
+                    <label for="durationSlider">Choose Exercise Duration:</label>
+                    <input type="range" id="durationSlider" min="60" max="180" step="1" value="120">
+                    <span id="durationDisplay">120 seconds</span>
+                </div>
+                <div>
+                    <label for="intervalSelectA">Breathe In Duration:</label>
+                    <select id="intervalSelectA">
+                        <option value="3">3 seconds</option>
+                        <option value="5">5 seconds</option>
+                        <option value="7">7 seconds</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="intervalSelectB">Breathe Out Duration:</label>
+                    <select id="intervalSelectB">
+                        <option value="5">5 seconds</option>
+                        <option value="7">7 seconds</option>
+                        <option value="10">10 seconds</option>
+                    </select>
+                </div>
+                <button id="startButton" onclick="startLoading()">Start Exercise</button>
+                <div class="tooltip" style="margin-top: 10%;" data-tooltip="Start Breathing!"></div>
+            </div>
+            <button id="stopButton" onclick="stopLoading()" style="display:none;">Stop</button>
+            <div id="infoDisplay" style="display:none;">
+                <p id="chosenDuration">Exercise Durtation: </p>
+                <p id="chosenInterval">Breathe: In = , Out = </p>
+            </div>
+            <div class="loader-container">
+                <svg class="progress-ring" width="200" height="200">
+                    <circle class="progress-ring__circle" stroke="black" stroke-width="4" fill="transparent" r="90" cx="100" cy="100"/>
+                </svg>
+                <div class="inner-circle">
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="footer">
+    <p>Copyright © 2024 BreathEasy. All rights reserved.</p>
+    <div class="platforms-tab">
+        <span class="tab-text">Almost Available On</span>
+        <div class="platforms-details">
+            <ul>
+                <li>iOS</li>
+                <li>Android</li>
+                <li>Windows</li>
+                <li>MacOS</li>
+                <li>Web</li>
+            </ul>
+        </div>
+    </div>
+</footer>
+    <script src="../JAVASCRIPT/scripts.js"></script>
+</body>
+</html>

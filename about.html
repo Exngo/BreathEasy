@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/styles.css">
+    <title>About page</title>
+</head>
+<body>
+    <div class="content">
+    <nav id="navbarID" class="navbar">
+        <ul class="nav-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="preview.html">Preview</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>
+    </nav>
+    <div class="tooltip" data-tooltip="That is navigation"></div>
+    <div class="header-block">
+        <div class="logo-section">
+            <a href="index.html"><img src="../logoo.png" alt="Logo" class="logo"></a>
+            <div class="vertical-text">
+                <span>H</span>
+                <span>o</span>
+                <span>m</span>
+                <span>e</span>
+            </div>    
+        </div>
+        <div class="tooltip" style="margin-left: 5%;" data-tooltip="That`s a Home button."></div>
+        <div id="headerID" class="header-name">
+            About BreathEasy
+        </div>
+        <div class="tooltip" style="margin-right: 5%;" data-tooltip="Preferences are here:"></div>
+        <div class="tooltip-section">
+            <button class="tooltip-button"><img class="settingsImg" src="../settings.png"></button>
+            <div class="tooltip-content">
+                <div class="toggle">
+                    <label class="switch">
+                        <input type="checkbox" id="toggleTooltips">
+                        <span class="slider round"></span>
+                    </label>
+                    <span class="label-text">Show tips</span>
+                </div>
+                <div class="toggle">
+                    <label class="switch">
+                        <input type="checkbox" id="toggleFontSize">
+                        <span class="slider round"></span>
+                    </label>
+                    <span class="label-text">Larger font</span>
+                </div>
+                <div class="toggle">
+                    <label class="switch">
+                        <input type="checkbox" id="toggleContrast">
+                        <span class="slider round"></span>
+                    </label>
+                    <span class="label-text">High Contrast</span>
+                </div>
+            </div>
+    </div>
+    </div>
+    <!--incrimental font increase buttons
+    <button onclick="increaseFontSize()">Increase Font Size</button>
+    <button onclick="decreaseFontSize()">Decrease Font Size</button>
+    -->
+    <main>
+        <div class="container">
+            <div class="text-section">
+                <div>
+                    <h1>About BreathEasy Space</h1>
+                    <h2>Enhance Your Well-being with Smart Technology</h2>
+                    <p>Breathing Space combines cutting-edge technology with personalized wellness to make stress management accessible and integrated seamlessly into your daily routine.</p>
+
+                    <h3>Tailored Experiences:</h3>
+                    <p>Enjoy customized breathing exercises that adapt to your progress and are optimized for relaxation.</p>
+
+                    <h3>Cross-Platform Syncing:</h3>
+                    <p>Access your wellness journey on any device, ensuring a smooth transition from mobile to desktop.</p>
+
+                    <h3>Smart Integration:</h3>
+                    <p>Connect seamlessly with your health devices to gain insights into your breathing patterns and overall health.</p>
+
+                    <h3>Innovative Futures:</h3>
+                    <p>We are committed to expanding our features, focusing on personalized wellness and advanced health integrations.</p>
+
+                    <h3>Join Our Community:</h3>
+                    <p>Embrace a holistic approach to wellness with Breathing Space and transform your daily life.</p>
+                </div>
+            </div>
+            <div id="imageSect" class="image-section">
+                <!-- Background image set via CSS -->
+            </div>
+        </div>
+    </main>
+    <script src="../JAVASCRIPT/scripts.js"></script>
+    </div>
+</body> 
+   <footer class="footer">
+    <p>Copyright © 2024 BreathEasy. All rights reserved.</p>
+    <div class="platforms-tab">
+        <span class="tab-text">Almost Available On</span>
+        <div class="platforms-details">
+            <ul>
+                <li>iOS</li>
+                <li>Android</li>
+                <li>Windows</li>
+                <li>MacOS</li>
+                <li>Web</li>
+            </ul>
+        </div>
+    </div>
+</footer>
+</html>

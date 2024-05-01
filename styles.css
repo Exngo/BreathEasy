@@ -1,0 +1,445 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100%; /* Essential for full height management */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+}
+.content{
+    flex: 1; /* Consumes any available space */
+    display: flex;
+    flex-direction: column; /* Ensures content is aligned vertically */
+    min-height: 0; /* Fixes flexbox bugs in some browsers */
+}
+/**about css__start**/
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    height: 100vh;
+}
+
+.text-section, .image-section {
+    flex: 1 1 50%; /* Each section takes half of the container */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 25px;
+}
+
+.text-section {
+    order: 1; /* Text on the left */
+}
+
+.image-section {
+    order: 2; /* Image on the right */
+    background: url('../about.png') no-repeat center center;
+    background-size: cover;
+    transform: scale(0.7);
+}
+/* Responsive behavior */
+@media (max-width: 600px) {
+    .nav-menu {
+        flex-direction: column; /* Stack links vertically on smaller screens */
+        padding: 20px; /* More padding in smaller viewports */
+    }
+
+    .nav-menu li {
+        text-align: center; /* Center align the text for vertical configuration */
+        width: 100%; /* Full width for easier tap targets */
+    }
+}
+@media (max-width: 800px) {
+    .text-section, .image-section {
+        flex: 1 1 100%;
+        order: 2; /* Image goes on top on smaller screens */
+    }
+    .text-section {
+        order: 1;
+    }
+}
+
+h1, h2 {
+    color: #2196F3; /* Example of a contrasting color for headers */
+}
+
+/**about css_end**/
+/**NAV css__start**/
+.navbar {
+    background-color: #333; /* Dark background for contrast */
+    color: white;
+    font-size: 1.6rem;
+    line-height: 1.5;
+    padding: 10px 20px; /* Sufficient padding for tap targets */
+}
+
+.nav-menu {
+    list-style-type: none;
+    display: flex;
+    justify-content: center; /* Centering the menu items horizontally */
+    align-items: center;
+}
+
+.nav-menu li {
+    padding: 10px 20px; /* Adequate padding for each link */
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s; /* Smooth transition for hover effect */
+}
+.intro-section {
+    height: 100vh; /* Full viewport height */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center; /* Vertically center the text */
+    justify-content: center; /* Horizontally center the text */
+}
+
+.intro-text {
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background for text for readability */
+    padding: 20px;
+    border-radius: 8px;
+    width: 90%; /* Responsive width */
+    max-width: 600px; /* Maximum width */
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.5rem; /* Large, clear header size */
+}
+
+h2 {
+    margin-top: 0;
+    font-size: 2rem;
+    color: rgb(37, 45, 117);
+}
+h3 {
+    margin-top: 0;
+    font-size: 1.7rem;
+    color: #1d1835;
+}
+
+p {
+    font-size: 1.4rem;
+    color: #666;
+}
+.nav-menu a:hover,
+.nav-menu a:focus {
+    color: #04AA6D; /* Highlight color on hover or focus for better user feedback */
+}
+
+/**NAV css__end**/
+
+/**Header-block css__start**/
+.header-block {
+    display: flex;
+    align-items: center;
+    background-color: #f0f0f069;
+    padding: 10px;
+}
+
+.logo-section, .header-name, .tooltip-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo {
+    width: 50px;
+    height: auto;
+    opacity: 0.6;
+    cursor: pointer;
+}
+
+.logo:hover {
+    opacity: 1;
+}
+.vertical-text {
+    display: flex;  /* Enables flexbox for the vertical text container */
+    flex-direction: column;  /* Stacks children vertically */
+    font-size: 1.1rem;  /* Sets the size of the font, adjust as needed */
+    cursor: pointer;  /* Makes the text appear clickable */
+}
+
+.header-name {
+    flex: 1;
+    text-align: center;
+    font-size: 24px;
+    background-color: transparent;
+}
+
+.tooltip-section {
+    position: relative;
+}
+.settingsImg {
+    /* Styles for the image */
+    width: 70px;  /* Sets the width of the icon */
+    height: auto;  /* Maintains the aspect ratio of the icon */
+    display: block;  /* Ensures the image does not have extra space around it */
+}
+.tooltip-button {
+    background-color: transparent;  /* Sets a transparent background */
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px 20px;
+    font-size: 16px;
+    opacity: 0.7;
+}
+.tooltip-button:hover {
+    opacity: 1;
+}
+
+.tooltip-content {
+    display: none; /* initially hidden */
+    background-color: black;
+    color: white;
+    text-align: center;
+    border-radius: 6px;
+    padding: 10px;
+    position: absolute;
+    z-index: 1;
+    top: 120%;
+    right: 0;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+.label-text {
+    color: white;
+    margin-left: 10px;
+}
+/**Header-block css__end**/
+/**footer css__start**/
+.footer {
+    position: relative;
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: left;
+}
+
+.platforms-tab {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+.tab-text {
+    background-color: #2196F3;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.platforms-details {
+    visibility: hidden;
+    position: absolute;
+    right: 0;
+    bottom: 100%;
+    background-color: #2196F3;
+    color: white;
+    text-align: left;
+    padding: 10px;
+    border-radius: 5px;
+    white-space: nowrap;
+    z-index: 100;
+}
+
+.platforms-tab:hover .platforms-details {
+    visibility: visible;
+}
+
+.platforms-details ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.platforms-details li {
+    margin: 5px 0;
+}
+
+/**footer css__end**/
+
+
+/**preview css___start**/
+#app {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 50vh; /* Full viewport height */
+    width: 100vw; /* Full viewport width */
+    text-align: center;
+    transition: background-color 0.3s, color 0.3s; /* Smooth transitions for color changes */
+}
+body.high-contrast #app {
+    background-color: #000;
+    color: #FFF;
+}
+
+body.high-contrast .inner-circle,
+body.high-contrast .progress-ring__circle {
+    stroke: white; /* Changes the stroke to white in high contrast mode */
+}
+body.high-contrast .inner-circle {
+    background-color: #333; /* Dark background for the inner circle */
+}
+.controls {
+    margin-bottom: 10px;
+}
+
+.loader-container {
+    position: relative;
+    width: 200px;
+    height: 200px;
+}
+
+.progress-ring {
+    transform: rotate(-90deg);
+    transform-origin: center;
+}
+
+.progress-ring__circle {
+    stroke: black;
+    stroke-width: 4;
+    fill: none;
+    r: 90;
+    cx: 100;
+    cy: 100;
+    stroke-dasharray: 565.48; /* Approximately 2 * π * 90 */
+    stroke-dashoffset: 565.48;
+    transition: stroke-dashoffset 0.3s linear;
+}
+
+.inner-circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 160px;
+    height: 160px;
+    background-color: #fff;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: background-color 0.5s;
+}
+
+
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+}
+/**preview css___end**/
+
+/**color legend__start*/
+.color-legend {
+    justify-content: center;
+    display: flex;
+    align-items: center;  /* Vertically align items in the legend */
+    gap: 10px;  /* Space between color boxes and text */
+    padding: 10px;  /* Padding around the legend for better spacing */
+    background: #f4f4f4;  /* Light background for the legend */
+    border-radius: 5px;  /* Rounded corners for the legend box */
+    font-size: 14px;  /* Font size for the text */
+}
+
+.color-box {
+    width: 20px;  /* Width of the color box */
+    height: 20px;  /* Height of the color box */
+    border: 1px solid #ccc;  /* Border around color box to enhance visibility */
+}
+/* High contrast styles */
+.high-contrast .color-legend {
+    background-color: black;
+    color: white;
+}
+
+.high-contrast .color-box {
+    border-color: white; /* Make borders visible in high contrast */
+}
+/**color legend end**/
+
+
+/**tooltips start**/
+.tooltip {
+    position: relative;
+    cursor: pointer;
+}
+
+.tooltip::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    width: 150px;
+    background-color: black;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    text-align: center;
+    bottom: 120%;  /* Adjust as needed */
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+}
+
+.tooltip.show::after {
+    visibility: visible;
+    opacity: 1;
+}
+/**tooltips end**/
